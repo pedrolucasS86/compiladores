@@ -1,16 +1,18 @@
 from antlr4 import *
 from generated.AraraVisitor import AraraVisitor
 
-
 class ASTDotVisitor(AraraVisitor):
     def __init__(self):
         self.node_id = 0
         self.dot = "digraph AST {\n"
 
+    def escape(self, texto):
+        return texto.replace('"', r'\"')  # Escapa aspas para DOT
+
     def nova_label(self, texto):
         self.node_id += 1
         nome = f"n{self.node_id}"
-        self.dot += f'{nome} [label="{texto}"];\n'
+        self.dot += f'{nome} [label="{self.escape(texto)}"];\n'
         return nome
 
     def visitChildren(self, node):

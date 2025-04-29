@@ -1,13 +1,9 @@
 digraph AST {
 n1 [label="ProgramaContext"];
-n2 [label="leia(n);"];
+n2 [label="leia(x);"];
 n1 -> n2;
-n3 [label="f<-1;"];
+n3 [label="escreva(\"oi\");"];
 n1 -> n3;
-n4 [label="enquanton>0facaf<-f*n;n<-n-1;fimenquanto"];
+n4 [label="<EOF>"];
 n1 -> n4;
-n5 [label="escreva(f);"];
-n1 -> n5;
-n6 [label="<EOF>"];
-n1 -> n6;
 }

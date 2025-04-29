@@ -1,2 +1,2 @@
-leia(x)
+leia(x);
 escreva("oi");
