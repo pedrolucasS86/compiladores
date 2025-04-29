@@ -18,31 +18,33 @@ ARARA é uma linguagem de programação fictícia com comandos em **português**
 
 ## 🧠 Funcionalidades da Linguagem
 
-🔤 **Tipos primitivos**  
+🔤 **Tipos primitivos:**  
 `int`, `string`
 
-📥 **Entrada**  
+📥 **Entrada:**  
 `leia()`
 
-📤 **Saída**  
+📤 **Saída:**  
 `escreva()`
 
-🔁 **Controle de fluxo**
-```plaintext
+🔁 **Controle de fluxo:**
+
+```arara
 se ... entao ... senao ... fimse  
 enquanto ... faca ... fimenquanto
-🧮 Expressões
+```
 
-Aritméticas: +, -, *, /
+🧮 **Expressões:**
 
-Lógicas: &&, ||, !
+- Aritméticas: `+`, `-`, `*`, `/`
+- Lógicas: `&&`, `||`, `!`
+- Comparações: `==`, `!=`, `<`, `>`, `<=`, `>=`
 
-Comparações: ==, !=, <, >, <=, >=
+---
 
-🗂 Estrutura do Projeto
-pgsql
-Copiar
-Editar
+## 🗂 Estrutura do Projeto
+
+```
 arara/
 ├── grammar/         → Arquivo Arara.g4 (gramática ANTLR)
 ├── generated/       → Arquivos gerados pelo ANTLR
@@ -55,37 +57,46 @@ arara/
 ├── analisador.log   → Log de execução (opcional)
 ├── antlr-4.13.1-complete.jar
 └── README.md        → Este arquivo ✨
-⚙️ Como Executar
-Gerar arquivos ANTLR:
+```
 
-bash
-Copiar
-Editar
+---
+
+## ⚙️ Como Executar
+
+### 1. Gerar arquivos ANTLR:
+
+```bash
 java -jar antlr-4.13.1-complete.jar -Dlanguage=Python3 -o generated grammar/Arara.g4
-Executar o compilador:
+```
 
-bash
-Copiar
-Editar
+### 2. Executar o compilador:
+
+```bash
 python3 src/main.py exemplos/triangulo.arara
-Gerar imagem da AST:
+```
 
-bash
-Copiar
-Editar
+### 3. Gerar imagem da AST:
+
+```bash
 dot -Tpng docs/ast.dot -o docs/ast.png
-📸 Exemplo de Código ARARA
-arara
-Copiar
-Editar
+```
+
+---
+
+## 📸 Exemplo de Código ARARA
+
+```arara
 leia(x)
 se x > 0 entao
     escreva("Positivo")
 senao
     escreva("Negativo ou zero")
 fimse
-👨‍🏫 Autor
-Desenvolvido por Pedro Lucas dos Santos
-📚 Projeto da disciplina de Compiladores (2025)
-🔗 GitHub do projeto
+```
 
+---
+
+## 👨‍🏫 Autor
+
+📚 Projeto da disciplina de **Compiladores (2025)**  
+🔗 [GitHub do projeto](https://github.com/pedrolucasS86/compiladores)
