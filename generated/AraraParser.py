@@ -1,4 +1,4 @@
-# Generated from grammar/Arara.g4 by ANTLR 4.13.0
+# Generated from Arara.g4 by ANTLR 4.13.0
 # encoding: utf-8
 from antlr4 import *
 from io import StringIO
@@ -6,7 +6,7 @@ import sys
 if sys.version_info[1] > 5:
 	from typing import TextIO
 else:
-	from typing.io import TextIO
+	from typing import TextIO
 
 def serializedATN():
     return [
@@ -147,15 +147,6 @@ class AraraParser ( Parser ):
             if hasattr( listener, "exitPrograma" ):
                 listener.exitPrograma(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitPrograma" ):
-                return visitor.visitPrograma(self)
-            else:
-                return visitor.visitChildren(self)
-
-
-
-
     def programa(self):
 
         localctx = AraraParser.ProgramaContext(self, self._ctx, self.state)
@@ -220,12 +211,6 @@ class AraraParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitComando" ):
                 listener.exitComando(self)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitComando" ):
-                return visitor.visitComando(self)
-            else:
-                return visitor.visitChildren(self)
 
 
 
@@ -316,12 +301,6 @@ class AraraParser ( Parser ):
             if hasattr( listener, "exitAtribuicao" ):
                 listener.exitAtribuicao(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitAtribuicao" ):
-                return visitor.visitAtribuicao(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
@@ -354,6 +333,7 @@ class AraraParser ( Parser ):
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
+            self.blocosenao = None # BlocoContext
 
         def expressao(self):
             return self.getTypedRuleContext(AraraParser.ExpressaoContext,0)
@@ -376,12 +356,6 @@ class AraraParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitCondicional" ):
                 listener.exitCondicional(self)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitCondicional" ):
-                return visitor.visitCondicional(self)
-            else:
-                return visitor.visitChildren(self)
 
 
 
@@ -408,7 +382,7 @@ class AraraParser ( Parser ):
                 self.state = 57
                 self.match(AraraParser.T__8)
                 self.state = 58
-                self.bloco()
+                localctx.blocosenao = self.bloco()
 
 
             self.state = 61
@@ -447,12 +421,6 @@ class AraraParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitRepeticao" ):
                 listener.exitRepeticao(self)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitRepeticao" ):
-                return visitor.visitRepeticao(self)
-            else:
-                return visitor.visitChildren(self)
 
 
 
@@ -507,12 +475,6 @@ class AraraParser ( Parser ):
             if hasattr( listener, "exitBloco" ):
                 listener.exitBloco(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitBloco" ):
-                return visitor.visitBloco(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
@@ -564,12 +526,6 @@ class AraraParser ( Parser ):
             if hasattr( listener, "exitExpressao" ):
                 listener.exitExpressao(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitExpressao" ):
-                return visitor.visitExpressao(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
@@ -620,12 +576,6 @@ class AraraParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitLogica" ):
                 listener.exitLogica(self)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitLogica" ):
-                return visitor.visitLogica(self)
-            else:
-                return visitor.visitChildren(self)
 
 
 
@@ -688,12 +638,6 @@ class AraraParser ( Parser ):
             if hasattr( listener, "exitComparacao" ):
                 listener.exitComparacao(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitComparacao" ):
-                return visitor.visitComparacao(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
@@ -755,12 +699,6 @@ class AraraParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitSoma" ):
                 listener.exitSoma(self)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitSoma" ):
-                return visitor.visitSoma(self)
-            else:
-                return visitor.visitChildren(self)
 
 
 
@@ -825,12 +763,6 @@ class AraraParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitTermo" ):
                 listener.exitTermo(self)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitTermo" ):
-                return visitor.visitTermo(self)
-            else:
-                return visitor.visitChildren(self)
 
 
 
@@ -899,12 +831,6 @@ class AraraParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitFator" ):
                 listener.exitFator(self)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitFator" ):
-                return visitor.visitFator(self)
-            else:
-                return visitor.visitChildren(self)
 
 
 

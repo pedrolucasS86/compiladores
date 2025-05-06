@@ -1,9 +1,0 @@
-digraph AST {
-n1 [label="ProgramaContext"];
-n2 [label="leia(x);"];
-n1 -> n2;
-n3 [label="escreva(\"oi\");"];
-n1 -> n3;
-n4 [label="<EOF>"];
-n1 -> n4;
-}

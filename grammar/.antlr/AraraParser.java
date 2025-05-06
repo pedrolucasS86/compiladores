@@ -282,6 +282,7 @@ public class AraraParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class CondicionalContext extends ParserRuleContext {
+		public BlocoContext blocosenao;
 		public ExpressaoContext expressao() {
 			return getRuleContext(ExpressaoContext.class,0);
 		}
@@ -320,7 +321,7 @@ public class AraraParser extends Parser {
 				setState(57);
 				match(T__8);
 				setState(58);
-				bloco();
+				((CondicionalContext)_localctx).blocosenao = bloco();
 				}
 			}
 

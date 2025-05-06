@@ -1,29 +1,29 @@
-from antlr4 import *
-from generated.AraraVisitor import AraraVisitor
+from antlr4.tree.Tree import ParseTreeVisitor
 
-class ASTDotVisitor(AraraVisitor):
+class ASTDotVisitor(ParseTreeVisitor):
     def __init__(self):
-        self.node_id = 0
-        self.dot = "digraph AST {\n"
-
-    def escape(self, texto):
-        return texto.replace('"', r'\"')  # Escapa aspas para DOT
-
-    def nova_label(self, texto):
-        self.node_id += 1
-        nome = f"n{self.node_id}"
-        self.dot += f'{nome} [label="{self.escape(texto)}"];\n'
-        return nome
-
-    def visitChildren(self, node):
-        pai = self.nova_label(type(node).__name__)
-        for filho in node.getChildren():
-            if hasattr(filho, 'getText'):
-                filho_id = self.nova_label(filho.getText())
-            else:
-                filho_id = self.visit(filho)
-            self.dot += f"{pai} -> {filho_id};\n"
-        return pai
+        self.dot = ["digraph AST {"]
+        self.count = 0
+        self.pilha = []
 
     def get_dot(self):
-        return self.dot + "}"
+        self.dot.append("}")
+        return "\n".join(self.dot)
+
+    def nova_label(self, label):
+        node_name = f"n{self.count}"
+        self.dot.append(f'{node_name} [label="{label}"];')
+        if self.pilha:
+            self.dot.append(f'{self.pilha[-1]} -> {node_name};')
+        self.pilha.append(node_name)
+        self.count += 1
+        return node_name
+
+    def visitChildren(self, node):
+        rule_name = type(node).__name__.replace("Context", "")
+        current_node = self.nova_label(rule_name)
+
+        for i in range(node.getChildCount()):
+            self.visit(node.getChild(i))
+
+        self.pilha.pop()

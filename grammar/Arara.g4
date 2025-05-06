@@ -13,7 +13,7 @@ comando
 atribuicao : ID '<-' expressao ';' ;
 
 condicional 
-    : 'se' expressao 'entao' bloco ('senao' bloco)? 'fimse'
+    : 'se' expressao 'entao' bloco ('senao' blocosenao=bloco)? 'fimse'
     ;
 
 repeticao 

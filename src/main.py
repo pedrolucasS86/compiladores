@@ -1,20 +1,18 @@
-import sys
 import os
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
+import subprocess
 from antlr4 import *
 from generated.AraraLexer import AraraLexer
 from generated.AraraParser import AraraParser
 from src.error_handler import CustomErrorListener
 from src.ast_generator import ASTDotVisitor
 import logging
-import subprocess
 
 logging.basicConfig(filename="analisador.log", filemode='w', encoding="utf-8", level=logging.INFO)
 
 def analisar_arquivo(caminho):
     with open(caminho, encoding="utf-8") as f:
         entrada = f.read()
+
     print("Código de entrada:\n" + "-"*40)
     print(entrada)
     print("-"*40)
@@ -30,15 +28,30 @@ def analisar_arquivo(caminho):
     parser.addErrorListener(CustomErrorListener())
 
     arvore = parser.programa()
+    print(">>> Root node do programa:", arvore.toStringTree(recog=parser))
 
+    # AST
     visitor = ASTDotVisitor()
     visitor.visit(arvore)
 
-    with open("ast.dot", "w", encoding="utf-8") as f:
-        f.write(visitor.get_dot())
+    dot_output = visitor.get_dot()
+    
+    # Criar pasta docs se não existir
+    os.makedirs("docs", exist_ok=True)
 
-    subprocess.run(["dot", "-Tpng", "ast.dot", "-o", "ast.png"])
-    print("AST gerada como ast.png")
+    with open("docs/ast.dot", "w", encoding="utf-8") as f:
+        f.write(dot_output)
+
+    print("Arquivo docs/ast.dot gerado.")
+    print("Gerando imagem com Graphviz...")
+
+    result = subprocess.run(["dot", "-Tpng", "docs/ast.dot", "-o", "docs/ast.png"], capture_output=True, text=True)
+
+    if result.returncode != 0:
+        print("❌ Erro ao gerar imagem do AST:")
+        print(result.stderr)
+    else:
+        print("✅ AST gerada com sucesso como 'docs/ast.png'!")
 
 if __name__ == "__main__":
     analisar_arquivo("exemplos/triangulo.arara")

@@ -1,2 +1,8 @@
-leia(x);
-escreva("oi");
+leia(a);
+leia(b);
+leia(c);
+se (a < b + c) entao
+    escreva("É um triângulo");
+senao
+    escreva("Não é um triângulo");
+fimse
