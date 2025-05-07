@@ -1,4 +1,4 @@
-// Generated from c:/Users/lgzic/compiladores/grammar/Arara.g4 by ANTLR 4.13.1
+// Generated from c:/Users/8760659/compiladores/grammar/Arara.g4 by ANTLR 4.13.1
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
@@ -64,6 +64,18 @@ public class AraraBaseListener implements AraraListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterCond_opc(AraraParser.Cond_opcContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitCond_opc(AraraParser.Cond_opcContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterRepeticao(AraraParser.RepeticaoContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -112,6 +124,18 @@ public class AraraBaseListener implements AraraListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterLogica_suf(AraraParser.Logica_sufContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitLogica_suf(AraraParser.Logica_sufContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterComparacao(AraraParser.ComparacaoContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -119,6 +143,18 @@ public class AraraBaseListener implements AraraListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitComparacao(AraraParser.ComparacaoContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterComparacao_suf(AraraParser.Comparacao_sufContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitComparacao_suf(AraraParser.Comparacao_sufContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -136,6 +172,18 @@ public class AraraBaseListener implements AraraListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterSoma_suf(AraraParser.Soma_sufContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSoma_suf(AraraParser.Soma_sufContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterTermo(AraraParser.TermoContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -143,6 +191,18 @@ public class AraraBaseListener implements AraraListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitTermo(AraraParser.TermoContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterTermo_suf(AraraParser.Termo_sufContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitTermo_suf(AraraParser.Termo_sufContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

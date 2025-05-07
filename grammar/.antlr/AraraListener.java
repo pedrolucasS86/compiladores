@@ -1,4 +1,4 @@
-// Generated from c:/Users/lgzic/compiladores/grammar/Arara.g4 by ANTLR 4.13.1
+// Generated from c:/Users/8760659/compiladores/grammar/Arara.g4 by ANTLR 4.13.1
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -47,6 +47,16 @@ public interface AraraListener extends ParseTreeListener {
 	 */
 	void exitCondicional(AraraParser.CondicionalContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link AraraParser#cond_opc}.
+	 * @param ctx the parse tree
+	 */
+	void enterCond_opc(AraraParser.Cond_opcContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link AraraParser#cond_opc}.
+	 * @param ctx the parse tree
+	 */
+	void exitCond_opc(AraraParser.Cond_opcContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link AraraParser#repeticao}.
 	 * @param ctx the parse tree
 	 */
@@ -87,6 +97,16 @@ public interface AraraListener extends ParseTreeListener {
 	 */
 	void exitLogica(AraraParser.LogicaContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link AraraParser#logica_suf}.
+	 * @param ctx the parse tree
+	 */
+	void enterLogica_suf(AraraParser.Logica_sufContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link AraraParser#logica_suf}.
+	 * @param ctx the parse tree
+	 */
+	void exitLogica_suf(AraraParser.Logica_sufContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link AraraParser#comparacao}.
 	 * @param ctx the parse tree
 	 */
@@ -96,6 +116,16 @@ public interface AraraListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitComparacao(AraraParser.ComparacaoContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link AraraParser#comparacao_suf}.
+	 * @param ctx the parse tree
+	 */
+	void enterComparacao_suf(AraraParser.Comparacao_sufContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link AraraParser#comparacao_suf}.
+	 * @param ctx the parse tree
+	 */
+	void exitComparacao_suf(AraraParser.Comparacao_sufContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link AraraParser#soma}.
 	 * @param ctx the parse tree
@@ -107,6 +137,16 @@ public interface AraraListener extends ParseTreeListener {
 	 */
 	void exitSoma(AraraParser.SomaContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link AraraParser#soma_suf}.
+	 * @param ctx the parse tree
+	 */
+	void enterSoma_suf(AraraParser.Soma_sufContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link AraraParser#soma_suf}.
+	 * @param ctx the parse tree
+	 */
+	void exitSoma_suf(AraraParser.Soma_sufContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link AraraParser#termo}.
 	 * @param ctx the parse tree
 	 */
@@ -116,6 +156,16 @@ public interface AraraListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitTermo(AraraParser.TermoContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link AraraParser#termo_suf}.
+	 * @param ctx the parse tree
+	 */
+	void enterTermo_suf(AraraParser.Termo_sufContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link AraraParser#termo_suf}.
+	 * @param ctx the parse tree
+	 */
+	void exitTermo_suf(AraraParser.Termo_sufContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link AraraParser#fator}.
 	 * @param ctx the parse tree

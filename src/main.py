@@ -6,7 +6,7 @@ from generated.AraraLexer import *
 from generated.AraraParser import *
 from src.error_handler import CustomErrorListener
 from src.ast_generator import ASTDotVisitor
-from src.interpreter.Interpreter import Interpreter  # Ajuste a importação aqui
+from src.interpreter.Interpreter import Interpreter
 import logging
 
 logging.basicConfig(filename="analisador.log", filemode='w', encoding="utf-8", level=logging.INFO)
@@ -14,7 +14,8 @@ logging.basicConfig(filename="analisador.log", filemode='w', encoding="utf-8", l
 def analisar_arquivo(caminho):
     with open(caminho, encoding="utf-8") as f:
         entrada = f.read()
-
+        
+    print("-"*40)
     print("Código de entrada:\n" + "-"*40)
     print(entrada)
     print("-"*40)
@@ -24,23 +25,38 @@ def analisar_arquivo(caminho):
     lexer.removeErrorListeners()
     lexer.addErrorListener(CustomErrorListener())
 
+    # 🔽🔽🔽 Mostrando tokens reconhecidos no terminal
+    print("Tokens reconhecidos:\n" + "-"*40)
+    token_stream_temp = CommonTokenStream(lexer)
+    token_stream_temp.fill()  # carrega todos os tokens
+    for token in token_stream_temp.tokens:
+        token_name = lexer.symbolicNames[token.type] if token.type < len(lexer.symbolicNames) else str(token.type)
+        print(f"{token_name:<15} {token.text:<30} (linha {token.line}, coluna {token.column})")
+
+    # ⚠️ Precisa reinicializar o lexer porque ele já foi consumido acima
+    lexer = AraraLexer(InputStream(entrada))
+    lexer.removeErrorListeners()
+    lexer.addErrorListener(CustomErrorListener())
+
     token_stream = CommonTokenStream(lexer)
     parser = AraraParser(token_stream)
     parser.removeErrorListeners()
     parser.addErrorListener(CustomErrorListener())
 
     arvore = parser.programa()
-    print(">>> Root node do programa:", arvore.toStringTree(recog=parser))
+    print("-"*40)
+    print("ARVORE:")
+    print("-"*40)
+    print(">>> Root node do programa:\n", arvore.toStringTree(recog=parser))
+    print("-"*40)
 
     # Gerar AST
     visitor = ASTDotVisitor()
     visitor.visit(arvore)
 
     dot_output = visitor.get_dot()
-    
-    # Criar pasta docs se não existir
-    os.makedirs("docs", exist_ok=True)
 
+    os.makedirs("docs", exist_ok=True)
     with open("docs/ast.dot", "w", encoding="utf-8") as f:
         f.write(dot_output)
 
@@ -53,9 +69,10 @@ def analisar_arquivo(caminho):
         print("❌ Erro ao gerar imagem do AST:")
         print(result.stderr)
     else:
-        print("✅ AST gerada com sucesso como 'docs/ast.png'!")
+        print("✅ AST gerada com sucesso como 'docs/ast.png'!\n")
 
-    # Adicionando o interpretador
+    print("-"*40)
+    # Executando o interpretador
     print("\nExecutando o interpretador...")
     interpreter = Interpreter()
     try:
@@ -68,4 +85,4 @@ def analisar_arquivo(caminho):
         print(f"❌ Erro durante a execução: {e}")
 
 if __name__ == "__main__":
-    analisar_arquivo("exemplos/pascal.arara")
+    analisar_arquivo("exemplos/triangulo.arara")

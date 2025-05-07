@@ -16,8 +16,9 @@ condicional
     : 'se' expressao 'entao' bloco cond_opc 'fimse'
     ;
 cond_opc
-    : 'senao' bloco
-    | /* vazio */
+    : 'senao' condicional
+    | 'senao' bloco
+    |
     ;
 
 repeticao 
