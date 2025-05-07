@@ -1,4 +1,4 @@
-# Generated from Arara.g4 by ANTLR 4.13.0
+# Generated from grammar/Arara.g4 by ANTLR 4.13.0
 # encoding: utf-8
 from antlr4 import *
 from io import StringIO
@@ -6,7 +6,7 @@ import sys
 if sys.version_info[1] > 5:
 	from typing import TextIO
 else:
-	from typing import TextIO
+	from typing.io import TextIO
 
 def serializedATN():
     return [
@@ -146,6 +146,9 @@ class AraraParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitPrograma" ):
                 listener.exitPrograma(self)
+
+
+
 
     def programa(self):
 

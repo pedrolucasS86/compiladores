@@ -1,4 +1,4 @@
-# Generated from Arara.g4 by ANTLR 4.13.0
+# Generated from grammar/Arara.g4 by ANTLR 4.13.0
 from antlr4 import *
 if "." in __name__:
     from .AraraParser import AraraParser

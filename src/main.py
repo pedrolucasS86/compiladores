@@ -1,8 +1,9 @@
 import os
+import sys
 import subprocess
-from antlr4 import *
-from generated.AraraLexer import AraraLexer
-from generated.AraraParser import AraraParser
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from generated.AraraLexer import *
+from generated.AraraParser import *
 from src.error_handler import CustomErrorListener
 from src.ast_generator import ASTDotVisitor
 import logging
