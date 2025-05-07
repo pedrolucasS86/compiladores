@@ -1,4 +1,4 @@
-// Generated from c:/Users/8760659/Desenvolvimento/arara/grammar/Arara.g4 by ANTLR 4.13.1
+// Generated from c:/Users/lgzic/compiladores/grammar/Arara.g4 by ANTLR 4.13.1
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Token;
@@ -39,7 +39,7 @@ public class AraraLexer extends Lexer {
 	private static String[] makeLiteralNames() {
 		return new String[] {
 			null, "'leia'", "'('", "')'", "';'", "'escreva'", "'<-'", "'se'", "'entao'", 
-			"'senao'", "'fimse'", "'enquanto'", "'faca'", "'fimenquanto'", "'!'"
+			"'fimse'", "'senao'", "'enquanto'", "'faca'", "'fimenquanto'", "'!'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
@@ -170,10 +170,10 @@ public class AraraLexer extends Lexer {
 		"\u0000\u0000CD\u0005s\u0000\u0000DE\u0005e\u0000\u0000E\u000e\u0001\u0000"+
 		"\u0000\u0000FG\u0005e\u0000\u0000GH\u0005n\u0000\u0000HI\u0005t\u0000"+
 		"\u0000IJ\u0005a\u0000\u0000JK\u0005o\u0000\u0000K\u0010\u0001\u0000\u0000"+
-		"\u0000LM\u0005s\u0000\u0000MN\u0005e\u0000\u0000NO\u0005n\u0000\u0000"+
-		"OP\u0005a\u0000\u0000PQ\u0005o\u0000\u0000Q\u0012\u0001\u0000\u0000\u0000"+
-		"RS\u0005f\u0000\u0000ST\u0005i\u0000\u0000TU\u0005m\u0000\u0000UV\u0005"+
-		"s\u0000\u0000VW\u0005e\u0000\u0000W\u0014\u0001\u0000\u0000\u0000XY\u0005"+
+		"\u0000LM\u0005f\u0000\u0000MN\u0005i\u0000\u0000NO\u0005m\u0000\u0000"+
+		"OP\u0005s\u0000\u0000PQ\u0005e\u0000\u0000Q\u0012\u0001\u0000\u0000\u0000"+
+		"RS\u0005s\u0000\u0000ST\u0005e\u0000\u0000TU\u0005n\u0000\u0000UV\u0005"+
+		"a\u0000\u0000VW\u0005o\u0000\u0000W\u0014\u0001\u0000\u0000\u0000XY\u0005"+
 		"e\u0000\u0000YZ\u0005n\u0000\u0000Z[\u0005q\u0000\u0000[\\\u0005u\u0000"+
 		"\u0000\\]\u0005a\u0000\u0000]^\u0005n\u0000\u0000^_\u0005t\u0000\u0000"+
 		"_`\u0005o\u0000\u0000`\u0016\u0001\u0000\u0000\u0000ab\u0005f\u0000\u0000"+

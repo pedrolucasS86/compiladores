@@ -44,6 +44,15 @@ class AraraListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by AraraParser#cond_opc.
+    def enterCond_opc(self, ctx:AraraParser.Cond_opcContext):
+        pass
+
+    # Exit a parse tree produced by AraraParser#cond_opc.
+    def exitCond_opc(self, ctx:AraraParser.Cond_opcContext):
+        pass
+
+
     # Enter a parse tree produced by AraraParser#repeticao.
     def enterRepeticao(self, ctx:AraraParser.RepeticaoContext):
         pass
@@ -80,12 +89,30 @@ class AraraListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by AraraParser#logica_suf.
+    def enterLogica_suf(self, ctx:AraraParser.Logica_sufContext):
+        pass
+
+    # Exit a parse tree produced by AraraParser#logica_suf.
+    def exitLogica_suf(self, ctx:AraraParser.Logica_sufContext):
+        pass
+
+
     # Enter a parse tree produced by AraraParser#comparacao.
     def enterComparacao(self, ctx:AraraParser.ComparacaoContext):
         pass
 
     # Exit a parse tree produced by AraraParser#comparacao.
     def exitComparacao(self, ctx:AraraParser.ComparacaoContext):
+        pass
+
+
+    # Enter a parse tree produced by AraraParser#comparacao_suf.
+    def enterComparacao_suf(self, ctx:AraraParser.Comparacao_sufContext):
+        pass
+
+    # Exit a parse tree produced by AraraParser#comparacao_suf.
+    def exitComparacao_suf(self, ctx:AraraParser.Comparacao_sufContext):
         pass
 
 
@@ -98,12 +125,30 @@ class AraraListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by AraraParser#soma_suf.
+    def enterSoma_suf(self, ctx:AraraParser.Soma_sufContext):
+        pass
+
+    # Exit a parse tree produced by AraraParser#soma_suf.
+    def exitSoma_suf(self, ctx:AraraParser.Soma_sufContext):
+        pass
+
+
     # Enter a parse tree produced by AraraParser#termo.
     def enterTermo(self, ctx:AraraParser.TermoContext):
         pass
 
     # Exit a parse tree produced by AraraParser#termo.
     def exitTermo(self, ctx:AraraParser.TermoContext):
+        pass
+
+
+    # Enter a parse tree produced by AraraParser#termo_suf.
+    def enterTermo_suf(self, ctx:AraraParser.Termo_sufContext):
+        pass
+
+    # Exit a parse tree produced by AraraParser#termo_suf.
+    def exitTermo_suf(self, ctx:AraraParser.Termo_sufContext):
         pass
 
 

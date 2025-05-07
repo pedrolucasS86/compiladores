@@ -1,0 +1,4 @@
+WARNING:root:ERRO SINTÁTICO [Linha 13, Coluna 8]: Esperado 'outro elemento válido', encontrado 'senao'.
+WARNING:root:ERRO SINTÁTICO [Linha 16, Coluna 4]: Esperado 'outro elemento válido', encontrado 'fimse'.
+WARNING:root:ERRO SINTÁTICO [Linha 19, Coluna 4]: Esperado 'outro elemento válido', encontrado 'fimse'.
+WARNING:root:ERRO SINTÁTICO [Linha 22, Coluna 0]: Esperado 'outro elemento válido', encontrado 'fimse'.

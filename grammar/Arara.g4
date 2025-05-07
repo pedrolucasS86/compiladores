@@ -13,7 +13,11 @@ comando
 atribuicao : ID '<-' expressao ';' ;
 
 condicional 
-    : 'se' expressao 'entao' bloco ('senao' blocosenao=bloco)? 'fimse'
+    : 'se' expressao 'entao' bloco cond_opc 'fimse'
+    ;
+cond_opc
+    : 'senao' bloco
+    | /* vazio */
     ;
 
 repeticao 
@@ -26,23 +30,39 @@ expressao
     : logica
     ;
 
-logica
-    : comparacao (OPLOG comparacao)*
+logica 
+    : comparacao logica_suf
+    ;
+logica_suf
+    : OPLOG comparacao logica_suf
+    | /* vazio */
     ;
 
-comparacao
-    : soma (OPCOMP soma)?
+comparacao 
+    : soma comparacao_suf
+    ;
+comparacao_suf
+    : OPCOMP soma
+    | /* vazio */
     ;
 
-soma
-    : termo (OPSUM termo)*
+soma 
+    : termo soma_suf
+    ;
+soma_suf
+    : OPSUM termo soma_suf
+    | /* vazio */
     ;
 
-termo
-    : fator (OPMULT fator)*
+termo 
+    : fator termo_suf
+    ;
+termo_suf
+    : OPMULT fator termo_suf
+    | /* vazio */
     ;
 
-fator
+fator 
     : '!' fator
     | '(' expressao ')'
     | INT

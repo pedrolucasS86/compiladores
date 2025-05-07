@@ -1,8 +1,22 @@
 leia(a);
 leia(b);
 leia(c);
-se (a < b + c) entao
-    escreva("É um triângulo");
+
+se (a > 0 && b > 0 && c > 0) entao
+    se (a + b > c && a + c > b && b + c > a) entao
+        se (a == b && b == c) entao
+            escreva("Triângulo equilátero válido");
+        fimse
+        senao se (a == b || a == c || b == c) entao
+            escreva("Triângulo isósceles válido");
+        fimse
+        senao
+            escreva("Triângulo escaleno válido");
+        fimse
+    fimse
+    senao
+        escreva("Medidas inválidas");
+    fimse
 senao
-    escreva("Não é um triângulo");
+    escreva("Erro: valores negativos ou zero não são permitidos");
 fimse
