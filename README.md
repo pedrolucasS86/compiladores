@@ -66,13 +66,13 @@ arara/
 ### 1. Gerar arquivos ANTLR:
 
 ```bash
-java -jar antlr-4.13.1-complete.jar -Dlanguage=Python3 -o generated grammar/Arara.g4
+java -jar antlr-4.13.0-complete.jar -Dlanguage=Python3 -o generated grammar/Arara.g4
 ```
 
 ### 2. Executar o compilador:
 
 ```bash
-python3 src/main.py exemplos/triangulo.arara
+python src/main.py <diretorio do arquivo>(exemplos/triangulo.arara)
 ```
 
 ### 3. Gerar imagem da AST:
