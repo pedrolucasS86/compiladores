@@ -6,6 +6,7 @@ from generated.AraraLexer import *
 from generated.AraraParser import *
 from src.error_handler import CustomErrorListener
 from src.ast_generator import ASTDotVisitor
+from src.interpreter.Interpreter import Interpreter  # Ajuste a importação aqui
 import logging
 
 logging.basicConfig(filename="analisador.log", filemode='w', encoding="utf-8", level=logging.INFO)
@@ -31,7 +32,7 @@ def analisar_arquivo(caminho):
     arvore = parser.programa()
     print(">>> Root node do programa:", arvore.toStringTree(recog=parser))
 
-    # AST
+    # Gerar AST
     visitor = ASTDotVisitor()
     visitor.visit(arvore)
 
@@ -54,5 +55,17 @@ def analisar_arquivo(caminho):
     else:
         print("✅ AST gerada com sucesso como 'docs/ast.png'!")
 
+    # Adicionando o interpretador
+    print("\nExecutando o interpretador...")
+    interpreter = Interpreter()
+    try:
+        interpreter.visit(arvore)
+        print("✅ Execução concluída com sucesso.")
+        print("\nMemória após execução:")
+        for var, value in interpreter.memory.items():
+            print(f"{var} = {value}")
+    except Exception as e:
+        print(f"❌ Erro durante a execução: {e}")
+
 if __name__ == "__main__":
-    analisar_arquivo("exemplos/triangulo.arara")
+    analisar_arquivo("exemplos/pascal.arara")
