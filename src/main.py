@@ -85,4 +85,4 @@ def analisar_arquivo(caminho):
         print(f"❌ Erro durante a execução: {e}")
 
 if __name__ == "__main__":
-    analisar_arquivo("exemplos/triangulo.arara")
+    analisar_arquivo("exemplos/pascal.arara")
