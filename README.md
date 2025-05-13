@@ -22,10 +22,13 @@ ARARA é uma linguagem de programação fictícia com comandos em **português**
 `int`, `string`
 
 📥 **Entrada:**  
-`leia()`
+`leia(x)`
 
 📤 **Saída:**  
-`escreva()`
+`escreva(...)`
+
+📝 **Atribuição:**  
+`variavel <- expressao`
 
 🔁 **Controle de fluxo:**
 
@@ -37,8 +40,23 @@ enquanto ... faca ... fimenquanto
 🧮 **Expressões:**
 
 - Aritméticas: `+`, `-`, `*`, `/`
-- Lógicas: `&&`, `||`, `!`
 - Comparações: `==`, `!=`, `<`, `>`, `<=`, `>=`
+- Lógicas: `&&`, `||`, `!`
+- Suporte a parênteses e precedência correta
+- Avaliação encadeada de expressões (ex: `a + b * c <= d || e != f`)
+
+---
+
+## 📐 Exemplo de Sintaxe
+
+```arara
+leia(x);
+se x > 0 entao
+    escreva("Positivo");
+senao
+    escreva("Negativo ou zero");
+fimse
+```
 
 ---
 
@@ -52,7 +70,8 @@ arara/
 ├── src/             → Código-fonte do compilador
 │   ├── main.py
 │   ├── error_handler.py
-│   └── ast_generator.py
+│   ├── ast_generator.py
+│   └── visitor.py
 ├── docs/            → AST visual (.dot e .png)
 ├── analisador.log   → Log de execução (opcional)
 ├── antlr-4.13.1-complete.jar
@@ -66,13 +85,13 @@ arara/
 ### 1. Gerar arquivos ANTLR:
 
 ```bash
-java -jar antlr-4.13.0-complete.jar -Dlanguage=Python3 -o generated grammar/Arara.g4
+java -jar antlr-4.13.1-complete.jar -Dlanguage=Python3 -o generated grammar/Arara.g4
 ```
 
 ### 2. Executar o compilador:
 
 ```bash
-python src/main.py <diretorio do arquivo>(exemplos/triangulo.arara)
+python src/main.py exemplos/<arquivo>.arara
 ```
 
 ### 3. Gerar imagem da AST:
@@ -83,16 +102,11 @@ dot -Tpng docs/ast.dot -o docs/ast.png
 
 ---
 
-## 📸 Exemplo de Código ARARA
+## 📌 Observações
 
-```arara
-leia(x)
-se x > 0 entao
-    escreva("Positivo")
-senao
-    escreva("Negativo ou zero")
-fimse
-```
+- Suporte completo à gramática recursiva com sufixos (`soma_suf`, `termo_suf`, etc)
+- Condicionais aninhadas com `senao` opcionais
+- Erros léxicos e sintáticos tratados com mensagens personalizadas
 
 ---
 
