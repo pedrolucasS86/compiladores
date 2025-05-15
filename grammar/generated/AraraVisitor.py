@@ -14,13 +14,28 @@ class AraraVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by AraraParser#comando.
-    def visitComando(self, ctx:AraraParser.ComandoContext):
+    # Visit a parse tree produced by AraraParser#comandoLeia.
+    def visitComandoLeia(self, ctx:AraraParser.ComandoLeiaContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by AraraParser#atribuicao.
-    def visitAtribuicao(self, ctx:AraraParser.AtribuicaoContext):
+    # Visit a parse tree produced by AraraParser#comandoEscreva.
+    def visitComandoEscreva(self, ctx:AraraParser.ComandoEscrevaContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by AraraParser#comandoAtrib.
+    def visitComandoAtrib(self, ctx:AraraParser.ComandoAtribContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by AraraParser#comandoCondicional.
+    def visitComandoCondicional(self, ctx:AraraParser.ComandoCondicionalContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by AraraParser#comandoRepeticao.
+    def visitComandoRepeticao(self, ctx:AraraParser.ComandoRepeticaoContext):
         return self.visitChildren(ctx)
 
 

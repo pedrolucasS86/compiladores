@@ -2,11 +2,10 @@ import os
 import sys
 import subprocess
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from generated.AraraLexer import *
-from generated.AraraParser import *
+from grammar.generated.AraraLexer import *
+from grammar.generated.AraraParser import *
 from src.error_handler import CustomErrorListener
 from src.ast_generator import ASTDotVisitor
-from src.interpreter.Interpreter import Interpreter
 import logging
 
 logging.basicConfig(filename="analisador.log", filemode='w', encoding="utf-8", level=logging.INFO)
@@ -25,15 +24,13 @@ def analisar_arquivo(caminho):
     lexer.removeErrorListeners()
     lexer.addErrorListener(CustomErrorListener())
 
-    # 🔽🔽🔽 Mostrando tokens reconhecidos no terminal
     print("Tokens reconhecidos:\n" + "-"*40)
     token_stream_temp = CommonTokenStream(lexer)
     token_stream_temp.fill()  # carrega todos os tokens
     for token in token_stream_temp.tokens:
         token_name = lexer.symbolicNames[token.type] if token.type < len(lexer.symbolicNames) else str(token.type)
-        print(f"{token_name:<15} {token.text:<30} (linha {token.line}, coluna {token.column})")
+        print(f"<{token_name}, {token.text}, Linha {token.line}, Coluna {token.column}>;")
 
-    # ⚠️ Precisa reinicializar o lexer porque ele já foi consumido acima
     lexer = AraraLexer(InputStream(entrada))
     lexer.removeErrorListeners()
     lexer.addErrorListener(CustomErrorListener())
@@ -72,17 +69,17 @@ def analisar_arquivo(caminho):
         print("✅ AST gerada com sucesso como 'docs/ast.png'!\n")
 
     print("-"*40)
-    # Executando o interpretador
-    print("\nExecutando o interpretador...")
-    interpreter = Interpreter()
-    try:
-        interpreter.visit(arvore)
-        print("✅ Execução concluída com sucesso.")
-        print("\nMemória após execução:")
-        for var, value in interpreter.memory.items():
-            print(f"{var} = {value}")
-    except Exception as e:
-        print(f"❌ Erro durante a execução: {e}")
+#       Executando o interpretador
+#    print("\nExecutando o interpretador...")
+#    interpreter = Interpreter()
+#    try:
+#        interpreter.visit(arvore)
+#        print("✅ Execução concluída com sucesso.")
+#        print("\nMemória após execução:")
+#        for var, value in interpreter.memory.items():
+#            print(f"{var} = {value}")
+#    except Exception as e:
+#        print(f"❌ Erro durante a execução: {e}")
 
 if __name__ == "__main__":
-    analisar_arquivo("exemplos/pascal.arara")
+    analisar_arquivo("exemplos/triangulo.arara")

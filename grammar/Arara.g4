@@ -1,83 +1,66 @@
 grammar Arara;
 
-programa : comando* EOF ;
+@lexer::members {
+  from antlr4.error.Errors import LexerNoViableAltException
+}
 
-comando
-    : 'leia' '(' ID ')' ';'
-    | 'escreva' '(' expressao ')' ';'
-    | atribuicao
-    | condicional
-    | repeticao
-    ;
+// PALAVRAS-CHAVE
+LEIA: 'leia';
+ESCREVA: 'escreva';
+SE: 'se';
+ENTAO: 'entao';
+SENAO: 'senao';
+FIMSE: 'fimse';
+ENQUANTO: 'enquanto';
+FACA: 'faca';
+FIMENQ: 'fimenquanto';
 
-atribuicao : ID '<-' expressao ';' ;
+// SÍMBOLOS
+LPAREN: '(';
+RPAREN: ')';
+SEMICOLON: ';';
+ATRIB: '<-';
 
-condicional 
-    : 'se' expressao 'entao' bloco cond_opc 'fimse'
-    ;
-cond_opc
-    : 'senao' condicional
-    | 'senao' bloco
-    |
-    ;
+OPSUM: '+' | '-';
+OPMULT: '*' | '/';
+OPCOMP: '==' | '!=' | '<' | '<=' | '>' | '>=';
+OPLOG: '&&' | '||';
+NOT: '!';
 
-repeticao 
-    : 'enquanto' expressao 'faca' bloco 'fimenquanto'
-    ;
+// LITERAIS POR ÚLTIMO
+STRING: '"' (~["\\] | '\\' .)* '"';
+INT: [0-9]+;
+ID: [a-zA-Z_][a-zA-Z_0-9]*;
 
-bloco : comando* ;
+WS: [ \t\r\n]+ -> skip;
 
-expressao 
-    : logica
-    ;
+//Regras e Comandos
+programa: comando* EOF;
 
-logica 
-    : comparacao logica_suf
-    ;
-logica_suf
-    : OPLOG comparacao logica_suf
-    | /* vazio */
-    ;
+comando:
+	LEIA LPAREN ID RPAREN SEMICOLON			# comandoLeia
+	| ESCREVA LPAREN expressao RPAREN SEMICOLON	# comandoEscreva
+	| ID ATRIB expressao SEMICOLON				# comandoAtrib
+	| condicional								# comandoCondicional
+	| repeticao									# comandoRepeticao;
 
-comparacao 
-    : soma comparacao_suf
-    ;
-comparacao_suf
-    : OPCOMP soma
-    | /* vazio */
-    ;
+condicional: SE expressao ENTAO bloco cond_opc FIMSE;
+cond_opc: SENAO bloco |;
 
-soma 
-    : termo soma_suf
-    ;
-soma_suf
-    : OPSUM termo soma_suf
-    | /* vazio */
-    ;
+repeticao: ENQUANTO expressao FACA bloco FIMENQ;
+bloco: comando*;
 
-termo 
-    : fator termo_suf
-    ;
-termo_suf
-    : OPMULT fator termo_suf
-    | /* vazio */
-    ;
+expressao: logica;
+logica: comparacao logica_suf;
+logica_suf: OPLOG comparacao logica_suf |;
 
-fator 
-    : '!' fator
-    | '(' expressao ')'
-    | INT
-    | STRING
-    | ID
-    ;
+comparacao: soma comparacao_suf;
+comparacao_suf: OPCOMP soma |;
 
-ID     : [a-zA-Z_][a-zA-Z_0-9]* ;
-INT    : [0-9]+ ;
-STRING : '"' (~["\\] | '\\' .)* '"' ;
+soma: termo soma_suf;
+soma_suf: OPSUM termo soma_suf |;
 
-OPSUM  : '+' | '-' ;
-OPMULT : '*' | '/' ;
-OPCOMP : '==' | '!=' | '<' | '<=' | '>' | '>=' ;
-OPLOG  : '&&' | '||' ;
+termo: fator termo_suf;
+termo_suf: OPMULT fator termo_suf |;
 
-WS     : [ \t\r\n]+ -> skip ;
+fator: NOT fator | LPAREN expressao RPAREN | INT | STRING | ID;
