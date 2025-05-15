@@ -14,6 +14,7 @@ FIMSE: 'fimse';
 ENQUANTO: 'enquanto';
 FACA: 'faca';
 FIMENQ: 'fimenquanto';
+TIPO: 'inteiro' | 'real';
 
 // SÍMBOLOS
 LPAREN: '(';
@@ -38,16 +39,20 @@ WS: [ \t\r\n]+ -> skip;
 programa: comando* EOF;
 
 comando:
-	LEIA LPAREN ID RPAREN SEMICOLON			# comandoLeia
+	LEIA LPAREN ID RPAREN SEMICOLON				# comandoLeia
 	| ESCREVA LPAREN expressao RPAREN SEMICOLON	# comandoEscreva
 	| ID ATRIB expressao SEMICOLON				# comandoAtrib
 	| condicional								# comandoCondicional
-	| repeticao									# comandoRepeticao;
+	| repeticao									# comandoRepeticao
+	| declaracao								# comandoDeclaracao;
 
 condicional: SE expressao ENTAO bloco cond_opc FIMSE;
 cond_opc: SENAO bloco |;
 
 repeticao: ENQUANTO expressao FACA bloco FIMENQ;
+
+declaracao: TIPO ID SEMICOLON;
+
 bloco: comando*;
 
 expressao: logica;

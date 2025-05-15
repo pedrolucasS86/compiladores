@@ -1,0 +1,19 @@
+Exemplos de uso no parser:
+Quando encontrar uma declaração de variável, chame:
+
+python
+Copiar
+Editar
+semantico.declarar_variavel("x", "inteiro")
+Quando usar uma variável, chame:
+
+python
+Copiar
+Editar
+semantico.usar_variavel("x")
+Quando fizer uma operação matemática, chame:
+
+python
+Copiar
+Editar
+semantico.verificar_operacao('+', "x", "y")  # ou ('/', "x", 0) para verificar divisão por zero

@@ -39,6 +39,11 @@ class AraraVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by AraraParser#comandoDeclaracao.
+    def visitComandoDeclaracao(self, ctx:AraraParser.ComandoDeclaracaoContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by AraraParser#condicional.
     def visitCondicional(self, ctx:AraraParser.CondicionalContext):
         return self.visitChildren(ctx)
@@ -51,6 +56,11 @@ class AraraVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by AraraParser#repeticao.
     def visitRepeticao(self, ctx:AraraParser.RepeticaoContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by AraraParser#declaracao.
+    def visitDeclaracao(self, ctx:AraraParser.DeclaracaoContext):
         return self.visitChildren(ctx)
 
 

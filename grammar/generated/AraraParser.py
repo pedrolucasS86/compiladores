@@ -10,49 +10,51 @@ else:
 
 def serializedATN():
     return [
-        4,1,22,136,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
+        4,1,23,143,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
         6,2,7,7,7,2,8,7,8,2,9,7,9,2,10,7,10,2,11,7,11,2,12,7,12,2,13,7,13,
-        2,14,7,14,2,15,7,15,1,0,5,0,34,8,0,10,0,12,0,37,9,0,1,0,1,0,1,1,
-        1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
-        1,1,3,1,59,8,1,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,3,1,3,1,3,3,3,71,8,
-        3,1,4,1,4,1,4,1,4,1,4,1,4,1,5,5,5,80,8,5,10,5,12,5,83,9,5,1,6,1,
-        6,1,7,1,7,1,7,1,8,1,8,1,8,1,8,1,8,3,8,95,8,8,1,9,1,9,1,9,1,10,1,
-        10,1,10,3,10,103,8,10,1,11,1,11,1,11,1,12,1,12,1,12,1,12,1,12,3,
-        12,113,8,12,1,13,1,13,1,13,1,14,1,14,1,14,1,14,1,14,3,14,123,8,14,
-        1,15,1,15,1,15,1,15,1,15,1,15,1,15,1,15,1,15,3,15,134,8,15,1,15,
-        0,0,16,0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,0,0,134,0,35,1,
-        0,0,0,2,58,1,0,0,0,4,60,1,0,0,0,6,70,1,0,0,0,8,72,1,0,0,0,10,81,
-        1,0,0,0,12,84,1,0,0,0,14,86,1,0,0,0,16,94,1,0,0,0,18,96,1,0,0,0,
-        20,102,1,0,0,0,22,104,1,0,0,0,24,112,1,0,0,0,26,114,1,0,0,0,28,122,
-        1,0,0,0,30,133,1,0,0,0,32,34,3,2,1,0,33,32,1,0,0,0,34,37,1,0,0,0,
-        35,33,1,0,0,0,35,36,1,0,0,0,36,38,1,0,0,0,37,35,1,0,0,0,38,39,5,
-        0,0,1,39,1,1,0,0,0,40,41,5,1,0,0,41,42,5,10,0,0,42,43,5,21,0,0,43,
-        44,5,11,0,0,44,59,5,12,0,0,45,46,5,2,0,0,46,47,5,10,0,0,47,48,3,
-        12,6,0,48,49,5,11,0,0,49,50,5,12,0,0,50,59,1,0,0,0,51,52,5,21,0,
-        0,52,53,5,13,0,0,53,54,3,12,6,0,54,55,5,12,0,0,55,59,1,0,0,0,56,
-        59,3,4,2,0,57,59,3,8,4,0,58,40,1,0,0,0,58,45,1,0,0,0,58,51,1,0,0,
-        0,58,56,1,0,0,0,58,57,1,0,0,0,59,3,1,0,0,0,60,61,5,3,0,0,61,62,3,
-        12,6,0,62,63,5,4,0,0,63,64,3,10,5,0,64,65,3,6,3,0,65,66,5,6,0,0,
-        66,5,1,0,0,0,67,68,5,5,0,0,68,71,3,10,5,0,69,71,1,0,0,0,70,67,1,
-        0,0,0,70,69,1,0,0,0,71,7,1,0,0,0,72,73,5,7,0,0,73,74,3,12,6,0,74,
-        75,5,8,0,0,75,76,3,10,5,0,76,77,5,9,0,0,77,9,1,0,0,0,78,80,3,2,1,
-        0,79,78,1,0,0,0,80,83,1,0,0,0,81,79,1,0,0,0,81,82,1,0,0,0,82,11,
-        1,0,0,0,83,81,1,0,0,0,84,85,3,14,7,0,85,13,1,0,0,0,86,87,3,18,9,
-        0,87,88,3,16,8,0,88,15,1,0,0,0,89,90,5,17,0,0,90,91,3,18,9,0,91,
-        92,3,16,8,0,92,95,1,0,0,0,93,95,1,0,0,0,94,89,1,0,0,0,94,93,1,0,
-        0,0,95,17,1,0,0,0,96,97,3,22,11,0,97,98,3,20,10,0,98,19,1,0,0,0,
-        99,100,5,16,0,0,100,103,3,22,11,0,101,103,1,0,0,0,102,99,1,0,0,0,
-        102,101,1,0,0,0,103,21,1,0,0,0,104,105,3,26,13,0,105,106,3,24,12,
-        0,106,23,1,0,0,0,107,108,5,14,0,0,108,109,3,26,13,0,109,110,3,24,
-        12,0,110,113,1,0,0,0,111,113,1,0,0,0,112,107,1,0,0,0,112,111,1,0,
-        0,0,113,25,1,0,0,0,114,115,3,30,15,0,115,116,3,28,14,0,116,27,1,
-        0,0,0,117,118,5,15,0,0,118,119,3,30,15,0,119,120,3,28,14,0,120,123,
-        1,0,0,0,121,123,1,0,0,0,122,117,1,0,0,0,122,121,1,0,0,0,123,29,1,
-        0,0,0,124,125,5,18,0,0,125,134,3,30,15,0,126,127,5,10,0,0,127,128,
-        3,12,6,0,128,129,5,11,0,0,129,134,1,0,0,0,130,134,5,20,0,0,131,134,
-        5,19,0,0,132,134,5,21,0,0,133,124,1,0,0,0,133,126,1,0,0,0,133,130,
-        1,0,0,0,133,131,1,0,0,0,133,132,1,0,0,0,134,31,1,0,0,0,9,35,58,70,
-        81,94,102,112,122,133
+        2,14,7,14,2,15,7,15,2,16,7,16,1,0,5,0,36,8,0,10,0,12,0,39,9,0,1,
+        0,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+        1,1,1,1,1,1,1,1,1,3,1,62,8,1,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,3,1,3,
+        1,3,3,3,74,8,3,1,4,1,4,1,4,1,4,1,4,1,4,1,5,1,5,1,5,1,5,1,6,5,6,87,
+        8,6,10,6,12,6,90,9,6,1,7,1,7,1,8,1,8,1,8,1,9,1,9,1,9,1,9,1,9,3,9,
+        102,8,9,1,10,1,10,1,10,1,11,1,11,1,11,3,11,110,8,11,1,12,1,12,1,
+        12,1,13,1,13,1,13,1,13,1,13,3,13,120,8,13,1,14,1,14,1,14,1,15,1,
+        15,1,15,1,15,1,15,3,15,130,8,15,1,16,1,16,1,16,1,16,1,16,1,16,1,
+        16,1,16,1,16,3,16,141,8,16,1,16,0,0,17,0,2,4,6,8,10,12,14,16,18,
+        20,22,24,26,28,30,32,0,0,141,0,37,1,0,0,0,2,61,1,0,0,0,4,63,1,0,
+        0,0,6,73,1,0,0,0,8,75,1,0,0,0,10,81,1,0,0,0,12,88,1,0,0,0,14,91,
+        1,0,0,0,16,93,1,0,0,0,18,101,1,0,0,0,20,103,1,0,0,0,22,109,1,0,0,
+        0,24,111,1,0,0,0,26,119,1,0,0,0,28,121,1,0,0,0,30,129,1,0,0,0,32,
+        140,1,0,0,0,34,36,3,2,1,0,35,34,1,0,0,0,36,39,1,0,0,0,37,35,1,0,
+        0,0,37,38,1,0,0,0,38,40,1,0,0,0,39,37,1,0,0,0,40,41,5,0,0,1,41,1,
+        1,0,0,0,42,43,5,1,0,0,43,44,5,11,0,0,44,45,5,22,0,0,45,46,5,12,0,
+        0,46,62,5,13,0,0,47,48,5,2,0,0,48,49,5,11,0,0,49,50,3,14,7,0,50,
+        51,5,12,0,0,51,52,5,13,0,0,52,62,1,0,0,0,53,54,5,22,0,0,54,55,5,
+        14,0,0,55,56,3,14,7,0,56,57,5,13,0,0,57,62,1,0,0,0,58,62,3,4,2,0,
+        59,62,3,8,4,0,60,62,3,10,5,0,61,42,1,0,0,0,61,47,1,0,0,0,61,53,1,
+        0,0,0,61,58,1,0,0,0,61,59,1,0,0,0,61,60,1,0,0,0,62,3,1,0,0,0,63,
+        64,5,3,0,0,64,65,3,14,7,0,65,66,5,4,0,0,66,67,3,12,6,0,67,68,3,6,
+        3,0,68,69,5,6,0,0,69,5,1,0,0,0,70,71,5,5,0,0,71,74,3,12,6,0,72,74,
+        1,0,0,0,73,70,1,0,0,0,73,72,1,0,0,0,74,7,1,0,0,0,75,76,5,7,0,0,76,
+        77,3,14,7,0,77,78,5,8,0,0,78,79,3,12,6,0,79,80,5,9,0,0,80,9,1,0,
+        0,0,81,82,5,10,0,0,82,83,5,22,0,0,83,84,5,13,0,0,84,11,1,0,0,0,85,
+        87,3,2,1,0,86,85,1,0,0,0,87,90,1,0,0,0,88,86,1,0,0,0,88,89,1,0,0,
+        0,89,13,1,0,0,0,90,88,1,0,0,0,91,92,3,16,8,0,92,15,1,0,0,0,93,94,
+        3,20,10,0,94,95,3,18,9,0,95,17,1,0,0,0,96,97,5,18,0,0,97,98,3,20,
+        10,0,98,99,3,18,9,0,99,102,1,0,0,0,100,102,1,0,0,0,101,96,1,0,0,
+        0,101,100,1,0,0,0,102,19,1,0,0,0,103,104,3,24,12,0,104,105,3,22,
+        11,0,105,21,1,0,0,0,106,107,5,17,0,0,107,110,3,24,12,0,108,110,1,
+        0,0,0,109,106,1,0,0,0,109,108,1,0,0,0,110,23,1,0,0,0,111,112,3,28,
+        14,0,112,113,3,26,13,0,113,25,1,0,0,0,114,115,5,15,0,0,115,116,3,
+        28,14,0,116,117,3,26,13,0,117,120,1,0,0,0,118,120,1,0,0,0,119,114,
+        1,0,0,0,119,118,1,0,0,0,120,27,1,0,0,0,121,122,3,32,16,0,122,123,
+        3,30,15,0,123,29,1,0,0,0,124,125,5,16,0,0,125,126,3,32,16,0,126,
+        127,3,30,15,0,127,130,1,0,0,0,128,130,1,0,0,0,129,124,1,0,0,0,129,
+        128,1,0,0,0,130,31,1,0,0,0,131,132,5,19,0,0,132,141,3,32,16,0,133,
+        134,5,11,0,0,134,135,3,14,7,0,135,136,5,12,0,0,136,141,1,0,0,0,137,
+        141,5,21,0,0,138,141,5,20,0,0,139,141,5,22,0,0,140,131,1,0,0,0,140,
+        133,1,0,0,0,140,137,1,0,0,0,140,138,1,0,0,0,140,139,1,0,0,0,141,
+        33,1,0,0,0,9,37,61,73,88,101,109,119,129,140
     ]
 
 class AraraParser ( Parser ):
@@ -67,35 +69,36 @@ class AraraParser ( Parser ):
 
     literalNames = [ "<INVALID>", "'leia'", "'escreva'", "'se'", "'entao'", 
                      "'senao'", "'fimse'", "'enquanto'", "'faca'", "'fimenquanto'", 
-                     "'('", "')'", "';'", "'<-'", "<INVALID>", "<INVALID>", 
-                     "<INVALID>", "<INVALID>", "'!'" ]
+                     "<INVALID>", "'('", "')'", "';'", "'<-'", "<INVALID>", 
+                     "<INVALID>", "<INVALID>", "<INVALID>", "'!'" ]
 
     symbolicNames = [ "<INVALID>", "LEIA", "ESCREVA", "SE", "ENTAO", "SENAO", 
-                      "FIMSE", "ENQUANTO", "FACA", "FIMENQ", "LPAREN", "RPAREN", 
-                      "SEMICOLON", "ATRIB", "OPSUM", "OPMULT", "OPCOMP", 
-                      "OPLOG", "NOT", "STRING", "INT", "ID", "WS" ]
+                      "FIMSE", "ENQUANTO", "FACA", "FIMENQ", "TIPO", "LPAREN", 
+                      "RPAREN", "SEMICOLON", "ATRIB", "OPSUM", "OPMULT", 
+                      "OPCOMP", "OPLOG", "NOT", "STRING", "INT", "ID", "WS" ]
 
     RULE_programa = 0
     RULE_comando = 1
     RULE_condicional = 2
     RULE_cond_opc = 3
     RULE_repeticao = 4
-    RULE_bloco = 5
-    RULE_expressao = 6
-    RULE_logica = 7
-    RULE_logica_suf = 8
-    RULE_comparacao = 9
-    RULE_comparacao_suf = 10
-    RULE_soma = 11
-    RULE_soma_suf = 12
-    RULE_termo = 13
-    RULE_termo_suf = 14
-    RULE_fator = 15
+    RULE_declaracao = 5
+    RULE_bloco = 6
+    RULE_expressao = 7
+    RULE_logica = 8
+    RULE_logica_suf = 9
+    RULE_comparacao = 10
+    RULE_comparacao_suf = 11
+    RULE_soma = 12
+    RULE_soma_suf = 13
+    RULE_termo = 14
+    RULE_termo_suf = 15
+    RULE_fator = 16
 
     ruleNames =  [ "programa", "comando", "condicional", "cond_opc", "repeticao", 
-                   "bloco", "expressao", "logica", "logica_suf", "comparacao", 
-                   "comparacao_suf", "soma", "soma_suf", "termo", "termo_suf", 
-                   "fator" ]
+                   "declaracao", "bloco", "expressao", "logica", "logica_suf", 
+                   "comparacao", "comparacao_suf", "soma", "soma_suf", "termo", 
+                   "termo_suf", "fator" ]
 
     EOF = Token.EOF
     LEIA=1
@@ -107,19 +110,20 @@ class AraraParser ( Parser ):
     ENQUANTO=7
     FACA=8
     FIMENQ=9
-    LPAREN=10
-    RPAREN=11
-    SEMICOLON=12
-    ATRIB=13
-    OPSUM=14
-    OPMULT=15
-    OPCOMP=16
-    OPLOG=17
-    NOT=18
-    STRING=19
-    INT=20
-    ID=21
-    WS=22
+    TIPO=10
+    LPAREN=11
+    RPAREN=12
+    SEMICOLON=13
+    ATRIB=14
+    OPSUM=15
+    OPMULT=16
+    OPCOMP=17
+    OPLOG=18
+    NOT=19
+    STRING=20
+    INT=21
+    ID=22
+    WS=23
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -166,17 +170,17 @@ class AraraParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 35
+            self.state = 37
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & 2097294) != 0):
-                self.state = 32
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & 4195470) != 0):
+                self.state = 34
                 self.comando()
-                self.state = 37
+                self.state = 39
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
-            self.state = 38
+            self.state = 40
             self.match(AraraParser.EOF)
         except RecognitionException as re:
             localctx.exception = re
@@ -217,6 +221,23 @@ class AraraParser ( Parser ):
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitComandoCondicional" ):
                 return visitor.visitComandoCondicional(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class ComandoDeclaracaoContext(ComandoContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a AraraParser.ComandoContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def declaracao(self):
+            return self.getTypedRuleContext(AraraParser.DeclaracaoContext,0)
+
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitComandoDeclaracao" ):
+                return visitor.visitComandoDeclaracao(self)
             else:
                 return visitor.visitChildren(self)
 
@@ -316,60 +337,66 @@ class AraraParser ( Parser ):
         localctx = AraraParser.ComandoContext(self, self._ctx, self.state)
         self.enterRule(localctx, 2, self.RULE_comando)
         try:
-            self.state = 58
+            self.state = 61
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [1]:
                 localctx = AraraParser.ComandoLeiaContext(self, localctx)
                 self.enterOuterAlt(localctx, 1)
-                self.state = 40
-                self.match(AraraParser.LEIA)
-                self.state = 41
-                self.match(AraraParser.LPAREN)
                 self.state = 42
-                self.match(AraraParser.ID)
+                self.match(AraraParser.LEIA)
                 self.state = 43
-                self.match(AraraParser.RPAREN)
+                self.match(AraraParser.LPAREN)
                 self.state = 44
+                self.match(AraraParser.ID)
+                self.state = 45
+                self.match(AraraParser.RPAREN)
+                self.state = 46
                 self.match(AraraParser.SEMICOLON)
                 pass
             elif token in [2]:
                 localctx = AraraParser.ComandoEscrevaContext(self, localctx)
                 self.enterOuterAlt(localctx, 2)
-                self.state = 45
-                self.match(AraraParser.ESCREVA)
-                self.state = 46
-                self.match(AraraParser.LPAREN)
                 self.state = 47
-                self.expressao()
+                self.match(AraraParser.ESCREVA)
                 self.state = 48
-                self.match(AraraParser.RPAREN)
+                self.match(AraraParser.LPAREN)
                 self.state = 49
+                self.expressao()
+                self.state = 50
+                self.match(AraraParser.RPAREN)
+                self.state = 51
                 self.match(AraraParser.SEMICOLON)
                 pass
-            elif token in [21]:
+            elif token in [22]:
                 localctx = AraraParser.ComandoAtribContext(self, localctx)
                 self.enterOuterAlt(localctx, 3)
-                self.state = 51
-                self.match(AraraParser.ID)
-                self.state = 52
-                self.match(AraraParser.ATRIB)
                 self.state = 53
-                self.expressao()
+                self.match(AraraParser.ID)
                 self.state = 54
+                self.match(AraraParser.ATRIB)
+                self.state = 55
+                self.expressao()
+                self.state = 56
                 self.match(AraraParser.SEMICOLON)
                 pass
             elif token in [3]:
                 localctx = AraraParser.ComandoCondicionalContext(self, localctx)
                 self.enterOuterAlt(localctx, 4)
-                self.state = 56
+                self.state = 58
                 self.condicional()
                 pass
             elif token in [7]:
                 localctx = AraraParser.ComandoRepeticaoContext(self, localctx)
                 self.enterOuterAlt(localctx, 5)
-                self.state = 57
+                self.state = 59
                 self.repeticao()
+                pass
+            elif token in [10]:
+                localctx = AraraParser.ComandoDeclaracaoContext(self, localctx)
+                self.enterOuterAlt(localctx, 6)
+                self.state = 60
+                self.declaracao()
                 pass
             else:
                 raise NoViableAltException(self)
@@ -429,17 +456,17 @@ class AraraParser ( Parser ):
         self.enterRule(localctx, 4, self.RULE_condicional)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 60
-            self.match(AraraParser.SE)
-            self.state = 61
-            self.expressao()
-            self.state = 62
-            self.match(AraraParser.ENTAO)
             self.state = 63
-            self.bloco()
+            self.match(AraraParser.SE)
             self.state = 64
-            self.cond_opc()
+            self.expressao()
             self.state = 65
+            self.match(AraraParser.ENTAO)
+            self.state = 66
+            self.bloco()
+            self.state = 67
+            self.cond_opc()
+            self.state = 68
             self.match(AraraParser.FIMSE)
         except RecognitionException as re:
             localctx.exception = re
@@ -481,14 +508,14 @@ class AraraParser ( Parser ):
         localctx = AraraParser.Cond_opcContext(self, self._ctx, self.state)
         self.enterRule(localctx, 6, self.RULE_cond_opc)
         try:
-            self.state = 70
+            self.state = 73
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [5]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 67
+                self.state = 70
                 self.match(AraraParser.SENAO)
-                self.state = 68
+                self.state = 71
                 self.bloco()
                 pass
             elif token in [6]:
@@ -549,16 +576,65 @@ class AraraParser ( Parser ):
         self.enterRule(localctx, 8, self.RULE_repeticao)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 72
-            self.match(AraraParser.ENQUANTO)
-            self.state = 73
-            self.expressao()
-            self.state = 74
-            self.match(AraraParser.FACA)
             self.state = 75
-            self.bloco()
+            self.match(AraraParser.ENQUANTO)
             self.state = 76
+            self.expressao()
+            self.state = 77
+            self.match(AraraParser.FACA)
+            self.state = 78
+            self.bloco()
+            self.state = 79
             self.match(AraraParser.FIMENQ)
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class DeclaracaoContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def TIPO(self):
+            return self.getToken(AraraParser.TIPO, 0)
+
+        def ID(self):
+            return self.getToken(AraraParser.ID, 0)
+
+        def SEMICOLON(self):
+            return self.getToken(AraraParser.SEMICOLON, 0)
+
+        def getRuleIndex(self):
+            return AraraParser.RULE_declaracao
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitDeclaracao" ):
+                return visitor.visitDeclaracao(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def declaracao(self):
+
+        localctx = AraraParser.DeclaracaoContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 10, self.RULE_declaracao)
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 81
+            self.match(AraraParser.TIPO)
+            self.state = 82
+            self.match(AraraParser.ID)
+            self.state = 83
+            self.match(AraraParser.SEMICOLON)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -597,17 +673,17 @@ class AraraParser ( Parser ):
     def bloco(self):
 
         localctx = AraraParser.BlocoContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 10, self.RULE_bloco)
+        self.enterRule(localctx, 12, self.RULE_bloco)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 81
+            self.state = 88
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & 2097294) != 0):
-                self.state = 78
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & 4195470) != 0):
+                self.state = 85
                 self.comando()
-                self.state = 83
+                self.state = 90
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
@@ -646,10 +722,10 @@ class AraraParser ( Parser ):
     def expressao(self):
 
         localctx = AraraParser.ExpressaoContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 12, self.RULE_expressao)
+        self.enterRule(localctx, 14, self.RULE_expressao)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 84
+            self.state = 91
             self.logica()
         except RecognitionException as re:
             localctx.exception = re
@@ -690,12 +766,12 @@ class AraraParser ( Parser ):
     def logica(self):
 
         localctx = AraraParser.LogicaContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 14, self.RULE_logica)
+        self.enterRule(localctx, 16, self.RULE_logica)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 86
+            self.state = 93
             self.comparacao()
-            self.state = 87
+            self.state = 94
             self.logica_suf()
         except RecognitionException as re:
             localctx.exception = re
@@ -739,21 +815,21 @@ class AraraParser ( Parser ):
     def logica_suf(self):
 
         localctx = AraraParser.Logica_sufContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 16, self.RULE_logica_suf)
+        self.enterRule(localctx, 18, self.RULE_logica_suf)
         try:
-            self.state = 94
+            self.state = 101
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [17]:
+            if token in [18]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 89
+                self.state = 96
                 self.match(AraraParser.OPLOG)
-                self.state = 90
+                self.state = 97
                 self.comparacao()
-                self.state = 91
+                self.state = 98
                 self.logica_suf()
                 pass
-            elif token in [4, 8, 11, 12]:
+            elif token in [4, 8, 12, 13]:
                 self.enterOuterAlt(localctx, 2)
 
                 pass
@@ -799,12 +875,12 @@ class AraraParser ( Parser ):
     def comparacao(self):
 
         localctx = AraraParser.ComparacaoContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 18, self.RULE_comparacao)
+        self.enterRule(localctx, 20, self.RULE_comparacao)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 96
+            self.state = 103
             self.soma()
-            self.state = 97
+            self.state = 104
             self.comparacao_suf()
         except RecognitionException as re:
             localctx.exception = re
@@ -844,19 +920,19 @@ class AraraParser ( Parser ):
     def comparacao_suf(self):
 
         localctx = AraraParser.Comparacao_sufContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 20, self.RULE_comparacao_suf)
+        self.enterRule(localctx, 22, self.RULE_comparacao_suf)
         try:
-            self.state = 102
+            self.state = 109
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [16]:
+            if token in [17]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 99
+                self.state = 106
                 self.match(AraraParser.OPCOMP)
-                self.state = 100
+                self.state = 107
                 self.soma()
                 pass
-            elif token in [4, 8, 11, 12, 17]:
+            elif token in [4, 8, 12, 13, 18]:
                 self.enterOuterAlt(localctx, 2)
 
                 pass
@@ -902,12 +978,12 @@ class AraraParser ( Parser ):
     def soma(self):
 
         localctx = AraraParser.SomaContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 22, self.RULE_soma)
+        self.enterRule(localctx, 24, self.RULE_soma)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 104
+            self.state = 111
             self.termo()
-            self.state = 105
+            self.state = 112
             self.soma_suf()
         except RecognitionException as re:
             localctx.exception = re
@@ -951,21 +1027,21 @@ class AraraParser ( Parser ):
     def soma_suf(self):
 
         localctx = AraraParser.Soma_sufContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 24, self.RULE_soma_suf)
+        self.enterRule(localctx, 26, self.RULE_soma_suf)
         try:
-            self.state = 112
+            self.state = 119
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [14]:
+            if token in [15]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 107
+                self.state = 114
                 self.match(AraraParser.OPSUM)
-                self.state = 108
+                self.state = 115
                 self.termo()
-                self.state = 109
+                self.state = 116
                 self.soma_suf()
                 pass
-            elif token in [4, 8, 11, 12, 16, 17]:
+            elif token in [4, 8, 12, 13, 17, 18]:
                 self.enterOuterAlt(localctx, 2)
 
                 pass
@@ -1011,12 +1087,12 @@ class AraraParser ( Parser ):
     def termo(self):
 
         localctx = AraraParser.TermoContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 26, self.RULE_termo)
+        self.enterRule(localctx, 28, self.RULE_termo)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 114
+            self.state = 121
             self.fator()
-            self.state = 115
+            self.state = 122
             self.termo_suf()
         except RecognitionException as re:
             localctx.exception = re
@@ -1060,21 +1136,21 @@ class AraraParser ( Parser ):
     def termo_suf(self):
 
         localctx = AraraParser.Termo_sufContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 28, self.RULE_termo_suf)
+        self.enterRule(localctx, 30, self.RULE_termo_suf)
         try:
-            self.state = 122
+            self.state = 129
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [15]:
+            if token in [16]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 117
+                self.state = 124
                 self.match(AraraParser.OPMULT)
-                self.state = 118
+                self.state = 125
                 self.fator()
-                self.state = 119
+                self.state = 126
                 self.termo_suf()
                 pass
-            elif token in [4, 8, 11, 12, 14, 16, 17]:
+            elif token in [4, 8, 12, 13, 15, 17, 18]:
                 self.enterOuterAlt(localctx, 2)
 
                 pass
@@ -1138,40 +1214,40 @@ class AraraParser ( Parser ):
     def fator(self):
 
         localctx = AraraParser.FatorContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 30, self.RULE_fator)
+        self.enterRule(localctx, 32, self.RULE_fator)
         try:
-            self.state = 133
+            self.state = 140
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [18]:
+            if token in [19]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 124
+                self.state = 131
                 self.match(AraraParser.NOT)
-                self.state = 125
+                self.state = 132
                 self.fator()
                 pass
-            elif token in [10]:
+            elif token in [11]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 126
+                self.state = 133
                 self.match(AraraParser.LPAREN)
-                self.state = 127
+                self.state = 134
                 self.expressao()
-                self.state = 128
+                self.state = 135
                 self.match(AraraParser.RPAREN)
                 pass
-            elif token in [20]:
+            elif token in [21]:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 130
+                self.state = 137
                 self.match(AraraParser.INT)
                 pass
-            elif token in [19]:
+            elif token in [20]:
                 self.enterOuterAlt(localctx, 4)
-                self.state = 131
+                self.state = 138
                 self.match(AraraParser.STRING)
                 pass
-            elif token in [21]:
+            elif token in [22]:
                 self.enterOuterAlt(localctx, 5)
-                self.state = 132
+                self.state = 139
                 self.match(AraraParser.ID)
                 pass
             else:

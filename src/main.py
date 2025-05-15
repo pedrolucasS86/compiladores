@@ -1,14 +1,20 @@
 import os
 import sys
 import subprocess
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from grammar.generated.AraraLexer import *
-from grammar.generated.AraraParser import *
-from src.error_handler import CustomErrorListener
-from src.ast_generator import ASTDotVisitor
 import logging
 
-logging.basicConfig(filename="analisador.log", filemode='w', encoding="utf-8", level=logging.INFO)
+from antlr4 import InputStream, CommonTokenStream
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from src.semantico.analisador_semantico import AnalisadorSemantico, CustomSemanticErrorListener
+from grammar.generated.AraraLexer import AraraLexer
+from grammar.generated.AraraParser import AraraParser
+from src.error_handler import CustomErrorListener
+from src.ast_generator import ASTDotVisitor
+
+# Configura o logging uma vez para todo o programa, incluindo semântico
+logging.basicConfig(filename="analisador.log", filemode='w', encoding="utf-8", level=logging.WARNING,
+                    format="%(levelname)s: %(message)s")
 
 def analisar_arquivo(caminho):
     with open(caminho, encoding="utf-8") as f:
@@ -26,11 +32,12 @@ def analisar_arquivo(caminho):
 
     print("Tokens reconhecidos:\n" + "-"*40)
     token_stream_temp = CommonTokenStream(lexer)
-    token_stream_temp.fill()  # carrega todos os tokens
+    token_stream_temp.fill()
     for token in token_stream_temp.tokens:
         token_name = lexer.symbolicNames[token.type] if token.type < len(lexer.symbolicNames) else str(token.type)
         print(f"<{token_name}, {token.text}, Linha {token.line}, Coluna {token.column}>;")
 
+    # Recria lexer e parser para análise sintática
     lexer = AraraLexer(InputStream(entrada))
     lexer.removeErrorListeners()
     lexer.addErrorListener(CustomErrorListener())
@@ -40,7 +47,14 @@ def analisar_arquivo(caminho):
     parser.removeErrorListeners()
     parser.addErrorListener(CustomErrorListener())
 
+    # Gera a árvore de análise sintática
     arvore = parser.programa()
+
+    # Análise semântica (antes de imprimir a árvore)
+    semantico_listener = CustomSemanticErrorListener()
+    semantico = AnalisadorSemantico(semantico_listener)
+    semantico.visit(arvore)
+
     print("-"*40)
     print("ARVORE:")
     print("-"*40)
@@ -69,17 +83,6 @@ def analisar_arquivo(caminho):
         print("✅ AST gerada com sucesso como 'docs/ast.png'!\n")
 
     print("-"*40)
-#       Executando o interpretador
-#    print("\nExecutando o interpretador...")
-#    interpreter = Interpreter()
-#    try:
-#        interpreter.visit(arvore)
-#        print("✅ Execução concluída com sucesso.")
-#        print("\nMemória após execução:")
-#        for var, value in interpreter.memory.items():
-#            print(f"{var} = {value}")
-#    except Exception as e:
-#        print(f"❌ Erro durante a execução: {e}")
 
 if __name__ == "__main__":
-    analisar_arquivo("exemplos/triangulo.arara")
+    analisar_arquivo("exemplos/semantico.arara")
