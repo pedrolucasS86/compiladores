@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 # Arquivo: src/tac/TACGenerator.py
 
 from antlr4.tree.Tree import ParseTreeVisitor
@@ -263,3 +264,29 @@ class TACGenerator(ParseTreeVisitor):
             self.tac_instructions.append(TACInstruction('NOT', temp, operand))
             return temp
         return TACOperand('LITERAL', 'None')
+=======
+from antlr4 import ParseTreeVisitor 
+from tac import TACInstruction, TACOperand
+
+
+class TACGenerator(ParseTreeVisitor):
+    def __init__(self):
+        self.instructions = []
+        self.temp_counter = 0
+        self.label_counter = 0
+
+    def novo_temp(self):
+        t = f"_t{self.temp_counter}"
+        self.temp_counter += 1
+        return TACOperand(t)
+
+    def novo_label(self):
+        l = f"L{self.label_counter}"
+        self.label_counter += 1
+        return TACOperand(l)
+
+    def visitComandoAtrib(self, ctx):
+        id = TACOperand(ctx.ID().getText())
+        valor = self.visit(ctx.expressao())
+        self.instructions.append(TACInstruction("mov", id, valor))
+>>>>>>> Stashed changes

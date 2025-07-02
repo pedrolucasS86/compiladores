@@ -3,17 +3,22 @@
 import os
 import sys
 import subprocess
+<<<<<<< Updated upstream
 import logging
 import argparse
 
 from antlr4 import InputStream, CommonTokenStream
+=======
+import argparse
+>>>>>>> Stashed changes
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from src.semantico.analisador_semantico import AnalisadorSemantico, CustomSemanticErrorListener
-from grammar.generated.AraraLexer import AraraLexer
-from grammar.generated.AraraParser import AraraParser
+
+from grammar.generated.AraraLexer import *
+from grammar.generated.AraraParser import *
 from src.error_handler import CustomErrorListener
 from src.ast_generator import ASTDotVisitor
+<<<<<<< Updated upstream
 from src.tac.TACGenerator import TACGenerator
 from src.llvm_generator import LLVMGenerator
 
@@ -21,6 +26,15 @@ logging.basicConfig(filename="analisador.log", filemode='w', encoding="utf-8", l
                     format="%(levelname)s: %(message)s")
 
 def analisar_arquivo(caminho, gerar_tac=False, gerar_llvm=False):
+=======
+from src.interpreter.Interpreter import Interpreter
+
+import logging
+
+logging.basicConfig(filename="analisador.log", filemode='w', encoding="utf-8", level=logging.INFO)
+
+def analisar_arquivo(caminho, gerar_tac=False):
+>>>>>>> Stashed changes
     with open(caminho, encoding="utf-8") as f:
         entrada = f.read()
 
@@ -50,6 +64,7 @@ def analisar_arquivo(caminho, gerar_tac=False, gerar_llvm=False):
     parser.addErrorListener(CustomErrorListener())
 
     arvore = parser.programa()
+<<<<<<< Updated upstream
 
     semantico_listener = CustomSemanticErrorListener()
     semantico = AnalisadorSemantico(semantico_listener)
@@ -63,6 +78,8 @@ def analisar_arquivo(caminho, gerar_tac=False, gerar_llvm=False):
         print("❌ Erros semânticos encontrados. Interrompendo a análise.")
         return
 
+=======
+>>>>>>> Stashed changes
     print("-"*40)
     print("ARVORE:")
     print("-"*40)
@@ -79,6 +96,7 @@ def analisar_arquivo(caminho, gerar_tac=False, gerar_llvm=False):
 
     print("Arquivo docs/ast.dot gerado.")
     print("Gerando imagem com Graphviz...")
+<<<<<<< Updated upstream
     result = subprocess.run(["dot", "-Tpng", "docs/ast.dot", "-o", "docs/ast.png"], capture_output=True, text=True)
     if result.returncode != 0:
         print("❌ Erro ao gerar imagem do AST:")
@@ -148,3 +166,45 @@ if __name__ == "__main__":
     CustomErrorListener.has_errors = False
     CustomSemanticErrorListener.has_errors = False
     analisar_arquivo(args.arquivo, args.gerar_tac, args.gerar_llvm)
+=======
+
+    try:
+        result = subprocess.run(["dot", "-Tpng", "docs/ast.dot", "-o", "docs/ast.png"], capture_output=True, text=True)
+        if result.returncode != 0:
+            print("❌ Erro ao gerar imagem do AST:")
+            print(result.stderr)
+        else:
+            print("✅ AST gerada com sucesso como 'docs/ast.png'!\n")
+    except FileNotFoundError:
+        print("❌ Graphviz não encontrado. Verifique a instalação.")
+
+    print("-"*40)
+    print("\nExecutando o interpretador...")
+    interpreter = Interpreter()
+    try:
+        interpreter.visit(arvore)
+        print("✅ Execução concluída com sucesso.")
+        print("\nMemória após execução:")
+        for var, value in interpreter.memory.items():
+            print(f"{var} = {value}")
+    except Exception as e:
+        print(f"❌ Erro durante a execução: {e}")
+
+    # Se foi solicitada geração de TAC
+    if gerar_tac:
+        from src.tac.TACGenerator import TACGenerator
+        tac_gen = TACGenerator()
+        tac_gen.visit(arvore)
+        tac_file = caminho.replace(".arara", ".tac")
+        with open(tac_file, "w", encoding="utf-8") as f:
+            f.write("\n".join(tac_gen.instructions))
+        print(f"✅ Código TAC gerado em {tac_file}")
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Compilador Arara")
+    parser.add_argument("arquivo", help="Caminho do arquivo .arara")
+    parser.add_argument("--gerar-tac", action="store_true", help="Gerar código intermediário (TAC)")
+    args = parser.parse_args()
+
+    analisar_arquivo(args.arquivo, gerar_tac=args.gerar_tac)
+>>>>>>> Stashed changes
